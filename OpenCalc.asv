@@ -1,0 +1,20 @@
+clc
+close all
+clear all
+% Inductance
+s = tf('s');
+% Motor Torque Const & Electromotive force const
+K = 0.0429
+% Motor Viscous Friction Const
+b = (21.2e-7 + 1.319e-7)/3.09
+% Inductance
+L = 0.514
+% Electric Resistance
+R = 2.68
+% Moment of intertia
+J = 22.519e-7
+
+P_motor = K/((J*s + b)*(L*s + R) + K*K)
+
+linearSystemAnalyzer('step', P_motor, 0:0.01:2.5);
+
