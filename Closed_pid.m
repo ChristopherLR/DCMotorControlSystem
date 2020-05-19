@@ -1,7 +1,9 @@
+close all
 
-Kp = 1;
-Ki = 1;
-Kd = 1;
+
+Kp = 0.5;
+Ki = 150;
+Kd = 0.005;
 
 Pc1 = pid(Kp);
 Pc2 = pid(Kp, Ki, Kd, 100);
@@ -14,7 +16,9 @@ Ppid_motor = feedback(P_motor*Pc2, 1);
 
 info = stepinfo(Ppid_motor)
 
-linearSystemAnalyzer('step', Pp_motor);
+zinfo = zpk(P_motor*Pc2)
+
+%linearSystemAnalyzer('step', Pp_motor);
 
 linearSystemAnalyzer('step', Ppid_motor);
 
