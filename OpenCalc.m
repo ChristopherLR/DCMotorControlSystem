@@ -11,7 +11,7 @@ J = 22.519e-7
 % Mechanical Time Const
 Tm = 3.09e-3
 % Motor Viscous Friction Const
-b = J/Tm
+b = 2.18e-6;
 % Inductance
 L = 0.514e-3
 % Electric Resistance
