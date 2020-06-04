@@ -23,6 +23,6 @@ P_motor = K/((J*s + b)*(L*s + R) + K*K)
 
 %linearSystemAnalyzer('step', P_motor);
 figure(1)
-step(P_motor);grid on;
+bode(P_motor);grid on;
 info = stepinfo(P_motor)
 zsyz = zpk(P_motor)
