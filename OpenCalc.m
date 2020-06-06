@@ -6,6 +6,8 @@ close all
 s = tf('s');
 % Motor Torque Const & Electromotive force const
 K = 42.9e-3
+Ke = 42.9e-3
+Kt = 42.9e-3
 % Moment of intertia
 J = 22.519e-7
 % Mechanical Time Const
