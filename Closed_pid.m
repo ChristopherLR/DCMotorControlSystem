@@ -25,7 +25,7 @@ Ki = 5.299; %15721.80295
 %Ki = 15721.8/24;
 Kd = 6.782e-07; %0.0013163
 %Kd = 0.00131/24;
-Pc1 = pid(Kp);
+Pc1 = pid(1);
 Pc2 = pid(Kp, Ki, Kd, 100);
 
 sat = saturation([0 1])
@@ -40,7 +40,7 @@ info = stepinfo(Ppid_motor)
 
 %zinfo = zpk(P_motor*Pc2)
 
-%linearSystemAnalyzer('step', Pp_motor);
+linearSystemAnalyzer('step', Pp_motor);
 
-linearSystemAnalyzer('step', Ppid_motor);
+%linearSystemAnalyzer('step', Ppid_motor);
 
